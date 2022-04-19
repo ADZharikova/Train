@@ -37,7 +37,6 @@ namespace Train
 
         public int Check(string putUser)
         {
-            int j = -1;
             foreach (var car in _typeOfTrainCars)
             {
                 if (car._trainCarType.ToLower() == putUser.ToLower())
@@ -45,10 +44,7 @@ namespace Train
                     return car._numberOfSeats;
                 }
             }
-
-                return 0;
-            
-            
+            return 0;
         }
     }
 
