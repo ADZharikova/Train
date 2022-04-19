@@ -66,9 +66,19 @@ namespace Train
 
                         Console.WriteLine();
                         Console.Write("Введите город отправления: ");
-                        depature = Console.ReadLine();
+                        depature = Console.ReadLine().Trim();
+                        while (String.IsNullOrEmpty(depature))
+                        {
+                            Console.Write("Введите город ещё раз: ");
+                            depature = Console.ReadLine().Trim();
+                        }
                         Console.Write("Введите город прибытия: ");
-                        arrival = Console.ReadLine();
+                        arrival = Console.ReadLine().Trim();
+                        while (String.IsNullOrEmpty(arrival))
+                        {
+                            Console.Write("Введите город ещё раз: ");
+                            arrival = Console.ReadLine().Trim();
+                        }
                         TrainStation.AddNewTrain(depature, arrival);
                         Console.WriteLine();
 
